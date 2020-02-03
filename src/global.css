@@ -1,0 +1,20 @@
+@charset "utf-8";
+@import './assets/iconfont.css';
+html{
+	font-size:31.25vw;
+	
+}
+body{
+	font-family: PingFang-SC-Regular,Helvetica Neue,Helvetica,Droid Sans Fallback,microsoft yahei,sans-serif;
+}
+body,ol,ul,li,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select,figure,figcaption{margin:0;padding:0}
+*{box-sizing: border-box;}
+body{font-family: "微软雅黑";}
+body,html{height:100%;}
+h1,h2,h3,h4,h5,h6{font-size:16px;font-weight:normal}
+a,u{text-decoration: none;}
+b,strong{font-weight:normal}
+i,em{font-style:normal}
+ul,ol,li{list-style:none;}
+img{display:block;border:0;}
+input{outline:none;border:0;}
