@@ -35,7 +35,7 @@ class Index extends Component {
     socket.on('connect', () => {
       console.log("连接初始化成功，时间：" + new Date().toLocaleTimeString());
       socket.emit('new', {
-        nickname: "test",
+        nickname: "testhj",
         orgi: "ukewo",
         appid: "1BJIZ8",
         userid: "3f2b62a0827efd823b4f859e50e1f611",
@@ -50,7 +50,7 @@ class Index extends Component {
     })
     //监听状态
     socket.on("status", (data) => {
-      console.log(data.dialogSessionId)
+      console.log(data)
       this.setState({
         dialogSessionId:data.dialogSessionId
       })
@@ -64,9 +64,9 @@ class Index extends Component {
     // 监听服务端消息
     socket.on('message', (data) => {
       console.log(data)
-      if (data.calltype === 'out') {
+      if (data.calltype === 'in') {
         if (data.messageType === "text") {
-          let obj = { num: 'out', answer: data.puremsg }
+          let obj = { num: 'out', answer: data.message }
           let { dataSource = [] } = this.state;
           dataSource.push(obj);
           this.setState({ dataSource });
@@ -76,33 +76,39 @@ class Index extends Component {
   }
 
 
-
+componentDidUpdate(){
+  console.log(this.refs.content.scrollTop)
+this.refs.content.scrollTop=99999;
+}
 
 
   render() {
     let { inputValue, dataSource, message } = this.state;
     return (
       <Box>
-
-        <div className="chatCon">
+        <div className="chatCon" ref="content">
           <div className="title_message">
             欢迎您来咨询华来知识！
           </div>
           <div className="title_message2">
             <Alert message={message} type="success" />
           </div>
+      
           {
             dataSource.map((item, index) => (
-              <div key={index}>
-                <Hidden visible={item.num === 'out'}>
-                   <Answer Msg={item.answer}></Answer>
+              <div key={index}   >
+                <Hidden visible={item.num === 'out'} >
+                   <Answer Msg={item.answer}  ></Answer>
                 </Hidden>
-                <Hidden visible={item.num === 'in'}>
+                <Hidden visible={item.num === 'in'}  >
                 <Ask Msg={item.ask}></Ask>
                 </Hidden>
               </div>
             ))
           }
+
+          
+       
         </div>
         <div className='inputSend'>
         <Input className="chat__myInput" value={inputValue} onChange={e => this.setState({ inputValue: e.target.value })}  />
@@ -127,12 +133,12 @@ class Index extends Component {
       socket.emit('message', {
         appid: "1BJIZ8",
         userid: "3f2b62a0827efd823b4f859e50e1f611",
-        isRobot:false,
+        robot:false,
         dialogSessionId:dialogSessionId,
         type: "message",
-        session: "a9a87db7feb24efab3690fe6c2a20e34",
+        // session: "a9a87db7feb24efab3690fe6c2a20e34",
         orgi: "ukewo",
-        message: inputValue
+        // message: inputValue
       })
       this.setState({ inputValue: "" });
     }

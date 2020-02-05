@@ -5,10 +5,13 @@ class Answer extends Component {
     constructor(props) {
         super(props)
     }
+  
     render() {
         return (
-            <Con>
-                 <img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=333354829,1245503780&fm=26&gp=0.jpg" alt=""/>
+            <Con id='content'>
+                  <p>
+                    <img src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3764939544,2146631850&fm=26&gp=0.jpg" alt=""/>  
+                </p>
                     <div>{this.props.Msg}</div>
    
             </Con>
