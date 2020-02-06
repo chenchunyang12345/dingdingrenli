@@ -6,7 +6,7 @@ export default {
   routes: [
     {
       path: '/',
-      component: '../pages/index',
+      component: '../layouts/index',
       routes: [
         { path: '/', component: '../pages/index' },
         { path: '/chat', component: '../pages/chat/index' }

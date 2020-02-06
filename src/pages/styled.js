@@ -2,13 +2,15 @@ import styled from "styled-components";
 
 export const Box = styled.div`
 width:100%;
-height:500px;
+height:100%;
 overflow:auto;
 .chatCon{
     padding: 10px;
     font-size: 15px;
     line-height: 15px;
     margin-bottom:0.4rem;
+    max-height:600px;
+    overflow:auto;
     .title_message{
       padding:0.1rem;
     background-color: #EAEAEA;
