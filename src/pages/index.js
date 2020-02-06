@@ -20,7 +20,8 @@ class Index extends Component {
       dataSource: [],
       sid: '',
       message: "",
-      dialogSessionId:''
+      dialogSessionId:'',
+      robot:true
     }
   }
   componentDidMount() {
@@ -63,8 +64,10 @@ class Index extends Component {
     })
     // 监听服务端消息
     socket.on('message', (data) => {
-      console.log(data)
-      if (data.calltype === 'in') {
+      console.log(data.nickName,data.channelMessage.robot)
+      if(data.nickName==='testhj'&& data.channelMessage.robot===false){
+
+      }else{
         if (data.messageType === "text") {
           let obj = { num: 'out', answer: data.message }
           let { dataSource = [] } = this.state;
@@ -72,6 +75,7 @@ class Index extends Component {
           this.setState({ dataSource });
         }
       }
+        
     });
   }
 
@@ -110,6 +114,7 @@ this.refs.content.scrollTop=99999;
        
         </div>
         <div className='inputSend'>
+        <Button className="chat__sendBtn" onClick={() => this.toHandlePA()} type="primary" size="small">转人工</Button>
         <Input className="chat__myInput" value={inputValue} onChange={e => this.setState({ inputValue: e.target.value })}  />
 
           <Button className="chat__sendBtn" onClick={() => this.btnSendMsg()} type="primary" size="small">发送</Button>
@@ -117,11 +122,16 @@ this.refs.content.scrollTop=99999;
       </Box>
     )
   }
-
+  toHandlePA(){
+    this.setState({
+      robot:false,
+    })
+  }
   btnSendMsg() {
 
     let inputValue = this.state.inputValue;
     let dialogSessionId=this.state.dialogSessionId;
+    let robot=this.state.robot;
     if (inputValue === '') {
 
     } else {
@@ -132,7 +142,7 @@ this.refs.content.scrollTop=99999;
       socket.emit('message', {
         appid: "1BJIZ8",
         userid: "3f2b62a0827efd823b4f859e50e1f611",
-        robot:true,
+        robot:robot,
         dialogSessionId:dialogSessionId,
         type: "message",
         // session: "a9a87db7feb24efab3690fe6c2a20e34",

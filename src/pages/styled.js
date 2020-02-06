@@ -31,7 +31,7 @@ overflow:auto;
 .inputSend{
   width:100%;
   height:0.4rem;
-  background:green;
+  background:#ccc;
   position: fixed;
   left: 0;
   bottom: 0;
