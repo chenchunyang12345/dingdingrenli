@@ -8,6 +8,8 @@ export const Con = styled.div`
     padding: 0.1rem 0.2rem;
     max-width:60%;
     border-radius:0.05rem;
+    line-height: 26px;
+    word-break: break-all;
   }
   p{
     width:50px;
@@ -20,5 +22,5 @@ export const Con = styled.div`
       height:100%;
     }
   }
-  
+
 `
