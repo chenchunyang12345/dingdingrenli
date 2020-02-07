@@ -123,6 +123,10 @@ class Index extends Component {
   }
 
   toHandlePA(){
+    if (!this.state.cansend) { // 如果没初始化完成，不让转人工
+      return;
+    }
+
     this.setState({
       robot: false,
     })
