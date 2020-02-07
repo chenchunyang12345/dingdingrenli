@@ -3,10 +3,7 @@
   "homepage": "./",
   "scripts": {
     "start": "umi dev",
-    "build": "umi build",
-    "test": "umi test",
-    "lint": "eslint --ext .js src mock tests",
-    "precommit": "lint-staged"
+    "build": "umi build"
   },
   "dependencies": {
     "antd": "^3.19.5",

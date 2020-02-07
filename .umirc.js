@@ -3,6 +3,7 @@
 export default {
   publicPath: './',
   treeShaking: true,
+  hash: true,
   routes: [
     {
       path: '/',
@@ -21,7 +22,7 @@ export default {
       dynamicImport: false,
       title: 'dingding',
       dll: false,
-      
+
       routes: {
         exclude: [
           /models\//,
