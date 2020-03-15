@@ -1,17 +1,15 @@
 import React, { Component } from 'react'
-import { Con } from './styled'
+import styles from './index.less';
+import userHead from '../../assets/user_head.jpeg';
 class Ask extends Component {
- 
-    render() {
-        return (
-            <Con>  
-                <div>{this.props.Msg}</div>
-                <p>
-                    <img src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3764939544,2146631850&fm=26&gp=0.jpg" alt=""/>  
-                </p>
-                
-            </Con>
-        )
-    }
+
+  render() {
+    return (
+      <div className={styles.ask}>
+        <div>{this.props.msg}</div>
+        <img src={userHead} alt="" />
+      </div>
+    )
+  }
 }
 export default Ask;

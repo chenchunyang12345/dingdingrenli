@@ -1,8 +1,6 @@
-@charset "utf-8";
-@import './assets/iconfont.css';
 html{
-	font-size:31.25vw;
-	
+  /* 假象设计图是750px的vw数值 */
+	font-size:26.67vw;
 }
 body{
 	font-family: PingFang-SC-Regular,Helvetica Neue,Helvetica,Droid Sans Fallback,microsoft yahei,sans-serif;

@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
 import styles from './index.less';
+import { Button } from 'antd';
 import botHead from '../../assets/bot_head.png';
 
 class Answer extends Component {
 
   render() {
-    let { msg } = this.props;
+    let { linkObj: { content, linkText } } = this.props;
     return (
       <div className={styles.answer}>
         <img src={botHead} alt="" />
         <div>
-          {msg}
+          <p>{content}</p>
+          <Button type='primary' className={styles.link_button}>{linkText}</Button>
         </div>
       </div>
     )

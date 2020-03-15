@@ -7,8 +7,10 @@
   },
   "dependencies": {
     "antd": "^3.19.5",
+    "antd-mobile": "^2.3.1",
     "dingtalk-jsapi": "^2.8.33",
     "dva": "^2.6.0-beta.6",
+    "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },

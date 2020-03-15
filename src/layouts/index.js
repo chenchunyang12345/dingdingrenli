@@ -1,24 +1,15 @@
-// import styles from './index.css';
-import TabBar from '../components/tabbar/index'
-// function BasicLayout() {
-//   return (
-//     <div className={styles.normal}> 
-//       {this.props.children}
-     
-//     </div>
-//   );
-// }
+import React, { Component } from 'react';
+import styles from './index.css';
 
-// export default BasicLayout;
+class BasicLayout extends Component {
 
-function BasicLayout(props) {
-  return (
-    <div>
-    
-      {props.children}
-       {/* <TabBar path={props.path}/> */}
-    </div>
-  );
+  render() {
+    return (
+      <div>
+        {this.props.children}
+      </div>
+    );
+  }
 }
 
 export default BasicLayout;
